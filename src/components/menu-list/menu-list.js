@@ -39,6 +39,13 @@ class MenuList extends Component {
     }
 };
 
+const View = ({items}) => {
+  return (
+    <ul className="menu__list">
+      {items}
+  </ul>
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -54,12 +61,6 @@ const mapDispatchToProps = {
   menuError
 }
 
-const View = ({items}) => {
-  return (
-    <ul className="menu__list">
-      {items}
-  </ul>
-  )
-}
+
 
 export default WithRestoService()(connect(mapStateToProps, mapDispatchToProps)(MenuList));

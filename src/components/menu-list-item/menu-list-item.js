@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './menu-list-item.scss';
 
-const MenuListItem = ({menuItem, onClickCharacterUpdate}) => {
+const MenuListItem = ({menuItem, onClickCharacterUpdate, addToCart}) => {
   const {title, price, url, category, id} = menuItem;
     return (
         <>
@@ -13,8 +13,9 @@ const MenuListItem = ({menuItem, onClickCharacterUpdate}) => {
                   <img className="menu__img" src={url} alt="Cesar salad"></img>
                   <div className="menu__category">Category: <span>{category}</span></div>
                   <div className="menu__price">Price: <span>{price}$</span></div>
-                  <button className="menu__btn">Add to cart</button>
                 </Link>
+                  <button onClick={() => addToCart()} className="menu__btn">Add to cart</button>
+
             </li>
 
         </>

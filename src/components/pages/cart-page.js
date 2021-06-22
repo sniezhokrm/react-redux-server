@@ -29,7 +29,6 @@ class ItemPage extends Component {
         }
         const item = this.props.menuItems.find(el => +el.id === +this.props.match.params.id)
         const{title, url, category, price} = item;
-
         return (
             <div className = "item_page">
                 <div className="menu__item item_block">

@@ -12,13 +12,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         menu: action.payload
-
       };
       case "MENU_REQUEST":
         return {
           ...state,
           loading: false,
-
         };
       case "MENU_ERROR":
         return {
@@ -26,6 +24,10 @@ const reducer = (state = initialState, action) => {
           loading: false,
           error: true
         };
+        case "SEND_CART":
+        return {
+          ...state
+        }
       case  "ITEM_ADD_TO_CART":
         const id = action.payload;
         const item = state.menu.find(item => item.id === id);

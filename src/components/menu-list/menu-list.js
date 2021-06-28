@@ -13,12 +13,13 @@ class MenuList extends Component {
   componentDidMount() {
     const {RestoService, menuError, menuLoaded, menuRequest} = this.props;
     menuRequest();;
-    if (true) {
-    }
       RestoService.getMenuItems()
       .then((res) => {menuLoaded(res);})
       .catch(err => {menuError(); })
   }
+    sendCart() {
+      console.log("work");
+    }
 
     render() {
       const {menuItems, loading, error, addedToCart} = this.props;
@@ -46,9 +47,11 @@ class MenuList extends Component {
 
 const View = ({items}) => {
   return (
+    <>
     <ul className="menu__list">
-      {items}
-  </ul>
+        {items}
+    </ul>
+  </>
   )
 }
 

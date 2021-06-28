@@ -2,6 +2,19 @@
     padding-top: 120px;
     padding-bottom: 50px;
     min-height: 100vh;
+    &__btn {
+      display: block;
+      margin: 30px auto;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 16px;
+      cursor: pointer;
+      width: 200px;
+      height: 50px;
+      border: 1px solid rgba(256,256,256, .2);
+      background-color: rgba(0,0,0,.7);
+      box-shadow: 0 0 20px rgba(256,256,256, .1);
+    }
     &__title {
         font-size: 36px;
         color: #fff;

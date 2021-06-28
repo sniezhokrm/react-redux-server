@@ -58,4 +58,4 @@ const mapDispatchToProps = {
     menuError
 }
 
-export default WithRestoService ()( connect(mapStateToProps, mapDispatchToProps)(ItemPage) );
+export default WithRestoService ()(connect(mapStateToProps, mapDispatchToProps)(ItemPage) );

@@ -40,6 +40,12 @@ const plusFromCart = (id) => {
     payload: id
   }
 }
+const sendCart = (order) => {
+  return {
+    type: "SEND_CART",
+    payload: order
+  }
+}
 
 export {
   menuLoaded,
@@ -48,6 +54,7 @@ export {
   addedToCart,
   deleteFromCart,
   minusFromCart,
-  plusFromCart
+  plusFromCart,
+  sendCart
 
 }

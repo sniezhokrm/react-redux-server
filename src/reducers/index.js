@@ -82,9 +82,8 @@ const reducer = (state = initialState, action) => {
           ...itemMinusState,
             countFood: --itemMinusState.countFood
           }
+
           if (itemMinusState.countFood >= 0) {
-
-
         return {
           ...state,
           items: [
@@ -106,7 +105,7 @@ const reducer = (state = initialState, action) => {
               newItemMinusZero,
               ...state.items.slice(itemIndMinus+1)
             ],
-            totalPrice: state.totalPrice - newItemMinus.price
+            totalPrice: state.totalPrice
           }
       }
         case "COUNT_ADD_FROM_CART":

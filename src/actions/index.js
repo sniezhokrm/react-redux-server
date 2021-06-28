@@ -28,10 +28,26 @@ const deleteFromCart = (id) => {
     payload: id
   }
 }
+const minusFromCart = (id) => {
+  return {
+    type: "COUNT_REMOVE_FROM_CART",
+    payload: id
+  }
+}
+const plusFromCart = (id) => {
+  return {
+    type: "COUNT_ADD_FROM_CART",
+    payload: id
+  }
+}
+
 export {
   menuLoaded,
   menuRequest,
   menuError,
   addedToCart,
-  deleteFromCart
+  deleteFromCart,
+  minusFromCart,
+  plusFromCart
+
 }

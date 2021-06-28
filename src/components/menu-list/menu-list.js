@@ -4,11 +4,12 @@ import {connect} from 'react-redux';
 import WithRestoService from '../hoc/with-resto-service';
 import {menuLoaded, menuRequest, menuError, addedToCart} from '../../actions/index';
 import Spinner from '../spinner/spinner';
+import nextId from "react-id-generator";
 import Error from '../error/error';
 import './menu-list.scss';
 
-class MenuList extends Component {
 
+class MenuList extends Component {
   componentDidMount() {
     const {RestoService, menuError, menuLoaded, menuRequest} = this.props;
     menuRequest();;
@@ -29,9 +30,10 @@ class MenuList extends Component {
       }
 
       const items = menuItems.map(menuItem => {
+        const id = nextId();
               return (
                   <MenuListItem
-                    key = {menuItem.id}
+                    key = {id}
                     menuItem = {menuItem}
                     addToCart={()=>addedToCart(menuItem.id)}/>
               )

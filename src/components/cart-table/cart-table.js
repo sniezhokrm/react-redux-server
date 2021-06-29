@@ -1,23 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import WithRestoService from '../hoc/';
 import {deleteFromCart, plusFromCart, minusFromCart} from '../../actions';
 import nextId from "react-id-generator";
 import './cart-table.scss';
 
-class CartTable extends Component {
-  sendCart() {
-    if( this.props.items.length > 0){
-
-        const {RestoService} = this.props;
-        RestoService.setOrder(this.props.items)
-      //      .then(() => {console.log(this.props.items)};)
-            .catch(error => console.error("error during record"))
-          }
-      }
-
-render() {
-  const{RestoService, items, deleteFromCart, plusFromCart, minusFromCart}=this.props
+const CartTable = ({RestoService, items, deleteFromCart, plusFromCart, minusFromCart}) => {
+  console.log(items.length);
+const elem = items.length > 0 ? <button onClick={() => {RestoService.setOrder(generateOrder(items))}}  className="cart__btn">Send order</button>:
+ <div className="cart__doOrder">Please, doit you order!</div>
     return (
         <>
             <div className="cart__title">Ваш заказ:</div>
@@ -40,11 +31,10 @@ render() {
                 })
               }
             </div>
-            <button onClick={() => {RestoService.setOrder(generateOrder(items))}}  className="cart__btn">Send order</button>
+            {elem}
         </>
     );
 };
-}
 
 const generateOrder = (items) => {
     const newOrder = items.map(item => {

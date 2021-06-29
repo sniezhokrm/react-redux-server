@@ -14,7 +14,6 @@ export default class RestoService {
     }
 
     async setOrder(order) {
-        console.log();
         const number = await this.getOrderNumber();
         const newOrder = {
             id: number,
@@ -35,7 +34,6 @@ export default class RestoService {
     async getOrderNumber(){
         const res = await this.getResource('/orders/');
         const orderNumber = res.length+1;
-        console.log(orderNumber);
         return orderNumber
     }
 }

@@ -25,6 +25,19 @@
           "countFood": 5
         }
       ]
+    },
+    {
+      "id": 3,
+      "order": [
+        {
+          "id": 1,
+          "countFood": 1
+        },
+        {
+          "id": 2,
+          "countFood": 1
+        }
+      ]
     }
   ],
   "menu": [

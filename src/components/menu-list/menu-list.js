@@ -17,9 +17,6 @@ class MenuList extends Component {
       .then((res) => {menuLoaded(res);})
       .catch(err => {menuError(); })
   }
-    sendCart() {
-      console.log("work");
-    }
 
     render() {
       const {menuItems, loading, error, addedToCart} = this.props;
